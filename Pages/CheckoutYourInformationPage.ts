@@ -21,6 +21,4 @@ export class CheckoutYourInformationPage extends BasePage{
         await this.InputFields.LastName.fill(lastName);
         await this.InputFields.ZipPostalCode.fill(zipPostalCode);
     };
-
-
 }

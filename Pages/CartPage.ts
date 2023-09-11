@@ -13,8 +13,4 @@ export class CartPage extends BasePage{
         Checkout: this.page.locator("//button[@id='checkout']"),
         ContinueShopping: this.page.locator("//button[@id='continue-shopping']"),
     };
-
-    constructor(page){
-        super(page)
-    };
 }

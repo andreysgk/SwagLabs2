@@ -1,6 +1,6 @@
 import { test, expect } from './BaseTest';
 
-test('compare the description of the backpack', async({pageManager})=>{
+test('Compare the description of the backpack', async({pageManager})=>{
     await pageManager.loginPage.logIn('standard_user', 'secret_sauce');
     await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click();
     await pageManager.productsPage.Locators.IconCart.click();
@@ -11,7 +11,7 @@ test('compare the description of the backpack', async({pageManager})=>{
     await expect(pageManager.productsPage.Buttons.RemoveCartLabsBackpack).toHaveText('Remove');
 })
 
-test('the continue shopping button is active', async({pageManager})=>{
+test('The continue shopping button is active', async({pageManager})=>{
     await pageManager.loginPage.logIn('standard_user', 'secret_sauce');
     await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click();
     await pageManager.productsPage.Locators.IconCart.click();
@@ -20,7 +20,7 @@ test('the continue shopping button is active', async({pageManager})=>{
     await expect(pageManager.productsPage.Locators.TitleProducts).toBeVisible();
 })
 
-test('remove backpack from cart', async({pageManager})=>{
+test('Remove backpack from cart', async({pageManager})=>{
     await pageManager.loginPage.logIn('standard_user', 'secret_sauce');
     await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click();
     await pageManager.productsPage.Locators.IconCart.click();
