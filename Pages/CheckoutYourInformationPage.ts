@@ -19,6 +19,6 @@ export class CheckoutYourInformationPage extends BasePage{
     async checkoutInfo(firstName, lastName, zipPostalCode){
         await this.InputFields.FirstName.fill(firstName);
         await this.InputFields.LastName.fill(lastName);
-        await this.InputFields.ZipPostalCode.fill(zipPostalCode);
+        await this.InputFields.ZipPostalCode.fill(zipPostalCode)
     };
 }
