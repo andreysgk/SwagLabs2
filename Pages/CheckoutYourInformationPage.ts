@@ -16,9 +16,9 @@ export class CheckoutYourInformationPage extends BasePage{
         Continue: this.page.locator("//input[@id='continue']"),
     };
 
-    async checkoutInfo(firstName, lastName, zipPostalCode){
+    async fillYourInformation(firstName, lastName, zipPostalCode){
         await this.InputFields.FirstName.fill(firstName);
         await this.InputFields.LastName.fill(lastName);
-        await this.InputFields.ZipPostalCode.fill(zipPostalCode)
+        await this.InputFields.ZipPostalCode.fill(zipPostalCode);
     };
 }
