@@ -13,5 +13,14 @@ export const test = base.extend<{pageManager: PageManager}>({
         await use(pageManager);
       },
 })
+export class BaseTest{
+  static standartUserName = 'standard_user';
+  static password = 'secret_sauce';
+  static titleProductsPage = 'Products';
+  static titleYourCartPage = 'Your Cart';
+  static titleCheckoutYourInformationPage = 'Checkout: Your Information';
+  static titleCheckoutOverviewPage = 'Checkout: Overview';
+  static titleCheckoutCompletePage = 'Checkout: Complete!';
+}
 
 export { expect } from '@playwright/test';
