@@ -9,6 +9,7 @@ test.describe('Products page tests', async () => {
     const priceBackpack = '$29.99';
     const nameAddToCartButton = 'Add to cart';
     const NameRemoveButton = 'Remove';
+    const numberOfProducts = 6;
 
     test('Detailed info about backpack', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
@@ -72,7 +73,7 @@ test.describe('Products page tests', async () => {
 
     test('Number of products', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
-        await expect(pageManager.productsPage.Locators.InventoryList).toHaveCount(6);
+        await expect(pageManager.productsPage.Locators.InventoryList).toHaveCount(numberOfProducts);
     })
 
     test.skip('Product filter', async({pageManager})=>{

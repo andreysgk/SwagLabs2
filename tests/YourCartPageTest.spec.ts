@@ -4,7 +4,7 @@ test('Compare the description of the backpack', async({pageManager})=>{
     await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
     await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click();
     await pageManager.productsPage.Locators.IconCart.click();
-    await expect(pageManager.cartPage.Locators.TitleYourCart).toHaveText('Your Cart')
+    await expect(pageManager.cartPage.Locators.TitleYourCart).toHaveText(BaseTest.titleYourCartPage)
     await expect(pageManager.cartPage.Locators.LabsBackpack).toHaveText('Sauce Labs Backpack');
     await expect(pageManager.cartPage.Locators.DescriptionBackpackInCart).toContainText('carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.');
     await expect(pageManager.cartPage.Locators.PriceBackpackInCart).toContainText('$29.99');
