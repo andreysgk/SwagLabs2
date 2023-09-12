@@ -4,7 +4,7 @@ test.describe('Login page tests', async () => {
     const DESCRIPTION_BACKPACK = 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.';
     const PRICE_BACKPACK = '$29.99';
 
-    test.only('Compare the description of the backpack', async({pageManager})=>{
+    test('Compare the description of the backpack', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
         await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click();
         await pageManager.productsPage.Locators.IconCart.click();

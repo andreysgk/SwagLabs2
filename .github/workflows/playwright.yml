@@ -1,12 +1,12 @@
-name: Playwright Tests
+name: SwagLabs2 Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, feature/Tests_UI_SwagLabs ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, feature/Tests_UI_SwagLabs ]
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3

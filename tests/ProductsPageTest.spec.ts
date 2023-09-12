@@ -73,7 +73,6 @@ test.describe('Products page tests', async () => {
         await expect(pageManager.checkoutCompletePage.Locators.TitleComplete).toHaveText(BaseTest.titleCheckoutCompletePage);
     })
 
-
     test('Labs Backpack to cart and checkout', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
         await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click();
@@ -104,7 +103,7 @@ test.describe('Products page tests', async () => {
         await expect(pageManager.productsPage.Locators.IconCart).toContainText('1');
     })
 
-    test.only('Number of products', async({pageManager})=>{
+    test('Number of products', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
         await expect(pageManager.productsPage.Locators.InventoryList).toHaveCount(NUMBER_OF_PRODUCTS);
     })

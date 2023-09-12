@@ -13,6 +13,7 @@ export const test = base.extend<{pageManager: PageManager}>({
         await use(pageManager);
       },
 })
+
 export class BaseTest{
   static standartUserName = 'standard_user';
   static password = 'secret_sauce';
