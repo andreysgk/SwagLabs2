@@ -20,5 +20,6 @@ test.describe('Login page tests', async () => {
         await pageManager.loginPage.logIn(lockedOutUserName, BaseTest.password);
         await expect(pageManager.loginPage.Locators.Error).toBeVisible();
         await expect(pageManager.loginPage.Locators.Error).toHaveText(errorLockedOutUser);
+        
     })
 });
