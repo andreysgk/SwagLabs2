@@ -1,5 +1,10 @@
 import { test, expect } from './BaseTest';
 
+test.describe('Products page tests', async () => {
+    const firstName = 'Andrew';
+    const lastName = 'Zaits';
+    const zipPostalCode = '212013';
+
     test('Detailed info about backpack', async({pageManager})=>{
         await pageManager.loginPage.logIn('standard_user', 'secret_sauce');
         await expect(pageManager.productsPage.Locators.TitleProducts).toBeVisible();
@@ -32,7 +37,7 @@ import { test, expect } from './BaseTest';
         await expect(pageManager.cartPage.Locators.LabsBackpack).toHaveText('Sauce Labs Backpack');
         await pageManager.cartPage.Buttons.Checkout.click();
         await expect(pageManager.checkoutYourInformationPage.Locators.TitleYourInformation).toHaveText('Checkout: Your Information');
-        await pageManager.checkoutYourInformationPage.fillYourInformation('Andrew', 'Zaits', '212013');
+        await pageManager.checkoutYourInformationPage.fillYourInformation(firstName, lastName, zipPostalCode);
         await pageManager.checkoutYourInformationPage.Buttons.Continue.click();
         await expect(pageManager.checkoutOverviewPage.Locators.TitleOverview).toHaveText('Checkout: Overview');
         await expect(pageManager.checkoutOverviewPage.Locators.LabsBackpack).toHaveText('Sauce Labs Backpack');
@@ -46,7 +51,7 @@ import { test, expect } from './BaseTest';
         await pageManager.productsPage.Locators.IconCart.click();
         await pageManager.cartPage.Buttons.Checkout.click();
         await expect(pageManager.checkoutYourInformationPage.Locators.TitleYourInformation).toHaveText('Checkout: Your Information');
-        await pageManager.checkoutYourInformationPage.fillYourInformation('Andrew', 'Zaits', '212013');
+        await pageManager.checkoutYourInformationPage.fillYourInformation(firstName, lastName, zipPostalCode);
         await pageManager.checkoutYourInformationPage.Buttons.Continue.click();
         await pageManager.checkoutOverviewPage.Buttons.Finish.click();
         await expect(pageManager.checkoutCompletePage.Locators.TitleComplete).toHaveText('Checkout: Complete!');
@@ -71,3 +76,4 @@ import { test, expect } from './BaseTest';
         await pageManager.productsPage.Locators.FilterElementZA.click();
         //Error: locator.click: Target closed
     })
+});

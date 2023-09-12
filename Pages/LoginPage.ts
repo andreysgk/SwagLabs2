@@ -14,7 +14,7 @@ export class LoginPage extends BasePage{
         Login: this.page.locator("//input[@name='login-button']"),
     };
 
-    async logIn(userName,password){
+    async logIn(userName, password){
         await this.InputFields.UserName.fill(userName);
         await this.InputFields.Password.fill(password);
         await this.Buttons.Login.click();
