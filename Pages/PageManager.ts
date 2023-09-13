@@ -8,14 +8,14 @@ import { CheckoutCompletePage } from "./CheckoutCompletePage";
 
 export class PageManager{
     page: Page;
-    loginPage;
-    cartPage;
-    productsPage;
-    checkoutYourInformationPage;
-    checkoutOverviewPage;
-    checkoutCompletePage;
+    loginPage: LoginPage;
+    cartPage: CartPage;
+    productsPage: ProductsPage;
+    checkoutYourInformationPage: CheckoutYourInformationPage;
+    checkoutOverviewPage: CheckoutOverviewPage;
+    checkoutCompletePage: CheckoutCompletePage;
 
-    constructor(page){
+    constructor(page: Page){
         this.page = page;
         this.loginPage = new LoginPage(page);
         this.cartPage = new CartPage(page);
