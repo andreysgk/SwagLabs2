@@ -108,7 +108,8 @@ test.describe('Products page tests', async () => {
         await expect(pageManager.productsPage.Locators.InventoryList).toHaveCount(NUMBER_OF_PRODUCTS);
     })
 
-    test.skip('Product filter', async({pageManager})=>{ //Error: locator.click: Target closed
+    //the test is skipped because the element from the shadow DOM is not clickable.
+    test.skip('Product filter', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
         await pageManager.productsPage.Buttons.Filter.click();
         await pageManager.productsPage.Locators.FilterElementZA.click();

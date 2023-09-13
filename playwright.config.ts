@@ -29,6 +29,7 @@ export default defineConfig({
     baseURL: 'https://www.saucedemo.com/',
     trace: 'retain-on-failure',
     ignoreHTTPSErrors: true,
+    headless: false,
   },
 
   /* Configure projects for major browsers */

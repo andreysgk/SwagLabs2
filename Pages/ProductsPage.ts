@@ -9,13 +9,13 @@ export class ProductsPage extends BasePage{
         DetailedPriceBackpack: this.page.locator("//div[@class='inventory_details_price']"),
         IconCart: this.page.locator(".shopping_cart_link"),
         FilterElementAZ: this.page.locator("//option[@value='az']"),
-        FilterElementZA: this.page.locator("//option[@value='za']"),
+        FilterElementZA: this.page.locator('select', { hasText: 'Name (Z to A)' }),
         InventoryList: this.page.locator('.inventory_item'),
     };
 
     Buttons = {
         AddToCartLabsBackpack: this.page.locator("//button[@id='add-to-cart-sauce-labs-backpack']"),
         RemoveCartLabsBackpack: this.page.locator("//button[@id='remove-sauce-labs-backpack']"),
-        Filter: this.page.locator("//span[@class='select_container']"),
+        Filter: this.page.locator("[class='select_container']"),
     };
 }
