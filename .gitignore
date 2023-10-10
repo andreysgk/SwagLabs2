@@ -2,5 +2,6 @@ node_modules/
 /tests-examples/
 /test-results/
 /playwright-report/
+/Dockerfile/
 /playwright/.cache/
 /swagLabs2.git/
