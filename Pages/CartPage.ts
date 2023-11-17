@@ -2,7 +2,7 @@ import { BasePage } from './BasePage';
 
 export class CartPage extends BasePage{
     Locators = {
-        TitleYourCart: this.page.locator('"Your Cart"'),
+        Title: this.page.locator(this.MainLocators.Title),
         LabsBackpack: this.page.locator("//div[text()='Sauce Labs Backpack']"),
         DescriptionBackpackInCart: this.page.locator("//div[@class='inventory_item_desc']"),
         PriceBackpackInCart: this.page.locator("//div[@class='inventory_item_price']"),

@@ -15,8 +15,8 @@ export class LoginPage extends BasePage{
     };
 
     async logIn(userName, password){
-        await this.InputFields.UserName.fill(userName);
-        await this.InputFields.Password.fill(password);
-        await this.Buttons.Login.click();
+        await this.InputFields.UserName.type(userName, { delay: 200 });
+        await this.InputFields.Password.type(password, { delay: 200 });
+        await this.Buttons.Login.click({ delay: 1000 });
     };
 }
