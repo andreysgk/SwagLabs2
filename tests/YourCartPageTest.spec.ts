@@ -19,7 +19,7 @@ test.describe('Login page tests', async () => {
         await pageManager.productsPage.Locators.IconCart.click();
         await expect(pageManager.cartPage.Buttons.ContinueShopping).toBeVisible();
         await pageManager.cartPage.Buttons.ContinueShopping.click();
-        await expect(pageManager.productsPage.Locators.TitleProducts).toBeVisible();
+        await expect(pageManager.productsPage.Locators.Title).toBeVisible();
     })
 
     test('Remove backpack from cart', async({pageManager})=>{

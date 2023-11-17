@@ -2,7 +2,7 @@ import { BasePage } from './BasePage';
 
 export class CheckoutYourInformationPage extends BasePage{
     Locators = {
-        TitleYourInformation: this.page.locator('"Checkout: Your Information"'),
+        Title: this.page.locator(this.MainLocators.Title),
         ErrorContainer: this.page.locator('error-message-container error'),
     };
 
@@ -17,8 +17,8 @@ export class CheckoutYourInformationPage extends BasePage{
     };
 
     async fillYourInformation(firstName, lastName, zipPostalCode){
-        await this.InputFields.FirstName.fill(firstName);
-        await this.InputFields.LastName.fill(lastName);
-        await this.InputFields.ZipPostalCode.fill(zipPostalCode);
+        await this.InputFields.FirstName.type(firstName, { delay: 200 });
+        await this.InputFields.LastName.type(lastName, { delay: 200 });
+        await this.InputFields.ZipPostalCode.type(zipPostalCode, { delay: 200 });
     };
 }

@@ -1,8 +1,8 @@
 import { test, expect, BaseTest } from './BaseTest';
 
 test.describe('Products page tests', async () => {
-    const FIRST_NAME = 'Andrew';
-    const LAST_NAME = 'Zaits';
+    const FIRST_NAME = 'Innowise';
+    const LAST_NAME = 'Group';
     const ZIP_POSTAL_CODE = '212013';
     const NAME_BACKPACK = 'Sauce Labs Backpack';
     const DESCRIPTION_BACKPACK = 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.';
@@ -13,21 +13,21 @@ test.describe('Products page tests', async () => {
 
     test('Check that the producs page has opened successfully', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
-        await expect(pageManager.productsPage.Locators.TitleProducts).toBeVisible();
+        await expect(pageManager.productsPage.Locators.Title).toBeVisible();
     })
 
     test('Detailed info about backpack', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
         await pageManager.productsPage.Locators.ElementLabsBackpack.click();
-        await expect(pageManager.productsPage.Locators.DetailedNameBackpack).toHaveText(NAME_BACKPACK);
-        await expect(pageManager.productsPage.Locators.DetailedDescriptionBackpack).toContainText(DESCRIPTION_BACKPACK);
-        await expect(pageManager.productsPage.Locators.DetailedPriceBackpack).toContainText(PRICE_BACKPACK);
+        await expect(pageManager.productsPage.Locators.DetailedName).toHaveText(NAME_BACKPACK);
+        await expect(pageManager.productsPage.Locators.DetailedDescription).toContainText(DESCRIPTION_BACKPACK);
+        await expect(pageManager.productsPage.Locators.DetailedPrice).toContainText(PRICE_BACKPACK);
     })
 
     test('Check that the shopping cart page has opened successfully', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
         await pageManager.productsPage.Locators.IconCart.click();
-        await expect(pageManager.cartPage.Locators.TitleYourCart).toBeVisible();
+        await expect(pageManager.cartPage.Locators.Title).toHaveText(BaseTest.titleYourCartPage)
     })
 
     test('The add to cart button changes to remove', async({pageManager})=>{
@@ -41,7 +41,7 @@ test.describe('Products page tests', async () => {
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
         await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click();
         await pageManager.productsPage.Locators.IconCart.click();
-        await expect(pageManager.cartPage.Locators.TitleYourCart).toHaveText(BaseTest.titleYourCartPage)
+        await expect(pageManager.cartPage.Locators.Title).toHaveText(BaseTest.titleYourCartPage)
     })
 
     test('Check that the "Checkout: Your Information page" has opened successfully', async({pageManager})=>{
@@ -49,7 +49,7 @@ test.describe('Products page tests', async () => {
         await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click();
         await pageManager.productsPage.Locators.IconCart.click();
         await pageManager.cartPage.Buttons.Checkout.click();
-        await expect(pageManager.checkoutYourInformationPage.Locators.TitleYourInformation).toHaveText(BaseTest.titleCheckoutYourInformationPage);
+        await expect(pageManager.checkoutYourInformationPage.Locators.Title).toHaveText(BaseTest.titleCheckoutYourInformationPage);
     })
 
     test('Check that the "Checkout: Overview" has opened successfully', async({pageManager})=>{
@@ -59,7 +59,7 @@ test.describe('Products page tests', async () => {
         await pageManager.cartPage.Buttons.Checkout.click();
         await pageManager.checkoutYourInformationPage.fillYourInformation(FIRST_NAME, LAST_NAME, ZIP_POSTAL_CODE);
         await pageManager.checkoutYourInformationPage.Buttons.Continue.click();
-        await expect(pageManager.checkoutOverviewPage.Locators.TitleOverview).toHaveText(BaseTest.titleCheckoutOverviewPage);
+        await expect(pageManager.checkoutOverviewPage.Locators.Title).toHaveText(BaseTest.titleCheckoutOverviewPage);
     })
 
     test('Check that the "Checkout: Complete!" has opened successfully', async({pageManager})=>{
@@ -70,19 +70,19 @@ test.describe('Products page tests', async () => {
         await pageManager.checkoutYourInformationPage.fillYourInformation(FIRST_NAME, LAST_NAME, ZIP_POSTAL_CODE);
         await pageManager.checkoutYourInformationPage.Buttons.Continue.click();
         await pageManager.checkoutOverviewPage.Buttons.Finish.click();
-        await expect(pageManager.checkoutCompletePage.Locators.TitleComplete).toHaveText(BaseTest.titleCheckoutCompletePage);
+        await expect(pageManager.checkoutCompletePage.Locators.Title).toHaveText(BaseTest.titleCheckoutCompletePage);
     })
 
-    test('Labs Backpack to cart and checkout', async({pageManager})=>{
+    //for innowise
+    test('Checkout Sauce Labs Backpack', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
-        await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click();
-        await pageManager.productsPage.Locators.IconCart.click();
-        await expect(pageManager.cartPage.Locators.LabsBackpack).toHaveText(NAME_BACKPACK);
-        await pageManager.cartPage.Buttons.Checkout.click();
+        await pageManager.productsPage.Buttons.AddToCartLabsBackpack.click({ delay: 1000 });
+        await pageManager.productsPage.Locators.IconCart.click({ delay: 1000 });
+        await pageManager.cartPage.Buttons.Checkout.click({ delay: 1000 });
         await pageManager.checkoutYourInformationPage.fillYourInformation(FIRST_NAME, LAST_NAME, ZIP_POSTAL_CODE);
-        await pageManager.checkoutYourInformationPage.Buttons.Continue.click();
+        await pageManager.checkoutYourInformationPage.Buttons.Continue.click({ delay: 1000 });
         await expect(pageManager.checkoutOverviewPage.Locators.LabsBackpack).toHaveText(NAME_BACKPACK);
-        await pageManager.checkoutOverviewPage.Buttons.Finish.click();
+        await pageManager.checkoutOverviewPage.Buttons.Finish.click({ delay: 1000 });
         await expect(pageManager.checkoutCompletePage.Locators.CompleteContainer).toBeVisible();
     })
 

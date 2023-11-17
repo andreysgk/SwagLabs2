@@ -7,7 +7,7 @@ test.describe('Login page tests', async () => {
 
     test('Log In, standard_user', async({pageManager})=>{
         await pageManager.loginPage.logIn(BaseTest.standartUserName, BaseTest.password);
-        await expect(pageManager.productsPage.Locators.TitleProducts).toBeVisible();
+        await expect(pageManager.productsPage.Locators.Title).toBeVisible();
     })
 
     test('Log In, unknown user', async({pageManager})=>{
