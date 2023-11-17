@@ -6,7 +6,7 @@ export class ProductsPage extends BasePage{
         ElementLabsBackpack: this.page.locator("//div[text()='Sauce Labs Backpack']"),
         DetailedName: this.page.locator('.inventory_details_name.large_size'),
         DetailedDescription: this.page.locator('.inventory_details_desc.large_size'),
-        DetailedPrice: this.page.locator('inventory_details_price'),
+        DetailedPrice: this.page.locator('.inventory_details_price'),
         IconCart: this.page.locator(".shopping_cart_link"),
         FilterElementAZ: this.page.locator("//option[@value='az']"),
         FilterElementZA: this.page.locator('select', { hasText: 'Name (Z to A)' }),
