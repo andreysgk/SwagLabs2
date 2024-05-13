@@ -1,7 +1,7 @@
 import { test, expect, BaseTest } from './BaseTest';
 test.describe('Login page tests', async () => {
-    const LOCKED_OUT_USER_NAME = 'locked_out_user';  
-    const UNKNOWN_USER_NAME = 'abrakadabra'; 
+    const LOCKED_OUT_USER_NAME = 'locked_out_user';
+    const UNKNOWN_USER_NAME = 'abrakadabra';
     const ERROR_UNKNOWN_USER = 'Epic sadface: Username and password do not match any user in this service';
     const ERROR_LOCKED_OUT_USER = 'Epic sadface: Sorry, this user has been locked out.';
 
